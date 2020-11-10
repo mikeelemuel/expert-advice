@@ -1,4 +1,4 @@
-import Route from '@ember/routing/route';
+import Route from "@ember/routing/route";
 import { set } from "@ember/object";
 import { inject as service } from "@ember/service";
 
@@ -10,7 +10,7 @@ export default class PostsNewRoute extends Route {
   }
 
   model() {
-    return this.store.createRecord('question');
+    return this.store.createRecord("question");
   }
 
   resetController(controller, isExiting) {

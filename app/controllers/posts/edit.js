@@ -1,4 +1,4 @@
-import Controller from '@ember/controller';
+import Controller from "@ember/controller";
 import { action } from "@ember/object";
 import { tracked } from "@glimmer/tracking";
 
@@ -27,14 +27,13 @@ export default class PostsEditController extends Controller {
     }
 
     if (safeToPostQuestion) {
-      let slug = this.model.title.split(' ').join('-');
-      let tags = this.questionTags.split(',');
+      let slug = this.model.title.split(" ").join("-");
+      let tags = this.questionTags.split(",");
       this.model.slug = slug;
       this.model.tags = [...tags];
-      this.model.save()
-      .then(() => {
+      this.model.save().then(() => {
         this.tagList = null;
-        this.transitionToRoute('index')
+        this.transitionToRoute("index");
       });
     }
   }

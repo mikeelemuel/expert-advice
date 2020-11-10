@@ -18,19 +18,20 @@ export default class IndexRoute extends Route {
   }
 
   async model(params) {
-    return this.store.query('question', {
-      include: 'user',
-      page: {
-        number: params.page,
-        size: params.size
-      }
-    })
-    .then(results => {
-      return {
-        data: results,
-        meta: results.meta
-      };
-    });
+    return this.store
+      .query("question", {
+        include: "user",
+        page: {
+          number: params.page,
+          size: params.size
+        }
+      })
+      .then(results => {
+        return {
+          data: results,
+          meta: results.meta
+        };
+      });
   }
 
   setupController(controller, model) {

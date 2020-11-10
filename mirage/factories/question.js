@@ -1,4 +1,4 @@
-import { Factory } from 'ember-cli-mirage';
+import { Factory } from "ember-cli-mirage";
 import faker from "faker";
 
 export default Factory.extend({
@@ -15,6 +15,6 @@ export default Factory.extend({
     return ["Python", "JavaScript", "AI"];
   },
   slug() {
-    return this.title.split(' ').join('-');
+    return this.title.split(" ").join("-");
   }
 });

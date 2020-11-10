@@ -1,9 +1,9 @@
-import { module, test } from 'qunit';
-import { setupRenderingTest } from 'ember-qunit';
-import { render, find } from '@ember/test-helpers';
-import { hbs } from 'ember-cli-htmlbars';
+import { module, test } from "qunit";
+import { setupRenderingTest } from "ember-qunit";
+import { render, find } from "@ember/test-helpers";
+import { hbs } from "ember-cli-htmlbars";
 
-module('Integration | Component | pagination-list', function(hooks) {
+module("Integration | Component | pagination-list", function (hooks) {
   setupRenderingTest(hooks);
 
   test("it renders the correct page", async function (assert) {
@@ -34,11 +34,7 @@ module('Integration | Component | pagination-list', function(hooks) {
     assert.dom(".pagination").exists();
     assert.dom(".item--prev").exists();
     assert.dom(".pagination__item:first-child").exists();
-    assert.equal(
-      find(".pagination__item:nth-child(2)").textContent.trim(),
-      "1",
-      "Page one exists"
-    );
+    assert.equal(find(".pagination__item:nth-child(2)").textContent.trim(), "1", "Page one exists");
   });
 
   test("it renders the correct size", async function (assert) {
@@ -69,10 +65,6 @@ module('Integration | Component | pagination-list', function(hooks) {
     assert.dom(".pagination").exists();
     assert.dom(".item--prev").exists();
     assert.dom(".pagination__item:first-child").exists();
-    assert.equal(
-      find(".pagination__item:nth-child(6)").textContent.trim(),
-      "5",
-      "Page five exists"
-    );
+    assert.equal(find(".pagination__item:nth-child(6)").textContent.trim(), "5", "Page five exists");
   });
 });

@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   let ENV = {
     modulePrefix: "ember-test-assignment",
     environment,
@@ -26,7 +26,7 @@ module.exports = function(environment) {
 
   ENV.serverURL = "https://ember-test-assignment.com";
 
-  ENV['ember-cli-mirage'] = {
+  ENV["ember-cli-mirage"] = {
     enabled: true,
     trackRequests: true
   };

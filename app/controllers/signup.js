@@ -9,11 +9,7 @@ export default class LoginController extends Controller {
   async signup() {
     const user = this.model;
     await user.save();
-    await this.session.authenticate(
-      "authenticator:oauth2",
-      user.email,
-      user.password
-    );
+    await this.session.authenticate("authenticator:oauth2", user.email, user.password);
     this.transitionTo("index");
   }
 }
