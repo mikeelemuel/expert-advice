@@ -1,0 +1,21 @@
+<ul class="pagination">
+  <li data-test-page-previous class="pagination__item item--prev">
+    {{#if (eq this.previousIndex 0)}}
+      <span class="pagination__icon icon--prev disabled"></span>
+    {{else}}
+      {{yield this.previousIndex "Previous"}}
+    {{/if}}
+  </li>
+  {{#each this.timesArray as |index|}}
+    <li class="pagination__item">
+      {{yield index index}}
+    </li>
+  {{/each}}
+  <li data-test-page-next class="pagination__item item--next">
+    {{#if (eq this.nextIndex 0)}}
+      <span class="pagination__icon icon--next disabled"></span>
+    {{else}}
+      {{yield this.nextIndex "Next"}}
+    {{/if}}
+  </li>
+</ul>

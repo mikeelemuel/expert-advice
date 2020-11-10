@@ -1,0 +1,26 @@
+.form-group {
+  margin-bottom: 1rem;
+
+  label {
+    position: relative;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+}
+
+.form-control {
+  font-size: 1rem;
+  padding: 5px 10px;
+  min-height: 2.5rem;
+  border: 1px solid #d1dbe3;
+  box-shadow: none;
+  border-radius: 10px;
+  width: 100%;
+
+  &:focus {
+    border-color: #90c1e5;
+    box-shadow: 0 0 0 0.2rem rgba(144, 193, 229, 0.5);
+  }
+}

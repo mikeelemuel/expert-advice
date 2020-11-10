@@ -1,0 +1,35 @@
+.btn {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.25;
+  padding: 1rem 2rem;
+  min-width: 10rem;
+  cursor: pointer;
+  border: 0px;
+  color: #ffff;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  background-color: #0056b3;
+
+  &:hover {
+    background-color: #5794d4;
+  }
+}
+
+.btn-danger {
+  background-color: #f44336;
+
+  &:hover {
+    background-color: #d1645c;
+  }
+}
+
+.btn-warning {
+  background-color: #f0e68c;
+
+  &:hover {
+    background-color: #e4dfb3;
+  }
+}

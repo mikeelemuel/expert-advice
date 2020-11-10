@@ -1,5 +1,8 @@
 import ENV from "ember-test-assignment/config/environment";
 import { Response } from 'miragejs';
+import questions from "./requests/questions";
+import answers from "./requests/answers";
+import users from "./requests/users";
 
 export default function() {
   this.logging = true;
@@ -31,4 +34,7 @@ export default function() {
     }
     return new Response(401);
   });
+  questions(this);
+  answers(this);
+  users(this);
 }

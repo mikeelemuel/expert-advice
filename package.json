@@ -47,7 +47,7 @@
     "ember-simple-auth": "3.1.0-beta.0",
     "ember-source": "~3.19.0",
     "ember-template-lint": "^2.10.0",
-    "ember-truth-helpers": "^2.1.0",
+    "ember-truth-helpers": "^3.0.0",
     "eslint": "^7.6.0",
     "eslint-plugin-ember": "^8.10.1",
     "eslint-plugin-node": "^11.1.0",
@@ -60,5 +60,8 @@
   },
   "engines": {
     "node": "12.x"
+  },
+  "dependencies": {
+    "faker": "^5.1.0"
   }
 }

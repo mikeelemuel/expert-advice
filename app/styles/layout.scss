@@ -1,0 +1,37 @@
+.question-page {
+  padding: 0 100px 0 100px;
+
+  .question-page__questions {
+    padding: 20px 0 0 0;
+
+    .question-page__questions--controls {
+      margin-left: 110px;
+      display: flex;
+
+      .question-page__questions--controls__search {
+        margin-right: 300px;
+      }
+    }
+
+    .question-page__questions--ask {
+      margin-left: 110px;
+      padding-top: 30px;
+      margin-right: 40%;
+
+      .question-page__questions--ask__errors {
+        background-color: #fff;
+        color: #e3795b;
+        border-color: #e3795b;
+        font-size: 1.125rem;
+
+        ul {
+          padding: 0 0 0 1rem;
+        }
+      }
+    }
+  }
+
+  .question-page__pagination {
+    margin-left: 60px;
+  }
+}

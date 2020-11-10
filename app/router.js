@@ -10,6 +10,14 @@ Router.map(function() {
   this.route("login");
   this.route("signup");
   this.route("index", { path: "" }, function() {});
+
+  this.route('posts', function() {
+    this.route('edit', { path: ":id" });
+    this.route('new');
+    this.route('answer', {
+      path: ':question_id/answers'
+    });
+  });
 });
 
 export default Router;

@@ -1,0 +1,55 @@
+<div class="question-page__questions">
+  <table>
+    <tr>
+      <th>Views</th>
+      <th>Questions</th>
+    </tr>
+    <tr>
+      <td>
+        {{#if this.model.question.views}}
+          {{this.model.question.views}}
+        {{else}}
+          0
+        {{/if}}
+      </td>
+      <td class="title">
+        {{this.model.question.title}}
+      </td>
+    </tr>
+  </table>
+
+  <div class="question-page__questions--ask">
+    <p>{{this.model.question.description}}</p>
+    <h1>Answer</h1>
+    {{#if this.bodyError}}
+      <div class="question-page__questions--ask__errors">
+        There is a problem with the following form fields:
+        <ul>
+          {{#each this.errors as |error|}}
+            <li>
+              {{error}}
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/if}}
+    <div class="form-group">
+      <label>
+        Body
+      </label>
+      <Textarea
+        @value={{this.model.answer.body}}
+        @class="form-control"
+        @rows={{10}}
+      />
+    </div>
+    <button
+      type="button"
+      data-test-answer-button
+      class="btn btn-primary"
+      {{on "click" this.submitAnswer}}
+    >
+      POST AN ANSWER
+    </button>
+  </div>
+</div>
