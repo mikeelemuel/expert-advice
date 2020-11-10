@@ -3,7 +3,7 @@ import { action } from "@ember/object";
 import { inject as service } from "@ember/service";
 
 export default class IndexController extends Controller {
-  queryParams = ["page", "size"];
+  queryParams = ["page", "size", "keyword"];
   page = 1;
   size = 7;
 
@@ -28,5 +28,10 @@ export default class IndexController extends Controller {
   @action
   updateQuestion(question) {
     this.transitionToRoute("posts.edit", question.id);
+  }
+
+  @action
+  searchQuestions() {
+    this.set("keyword", this.searchText ? this.searchText : undefined);
   }
 }

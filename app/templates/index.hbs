@@ -1,7 +1,11 @@
 <div class="question-page__questions">
   <header>
-    <h1>Expert Advice</h1>
-    <h4>Get answers to difficult questions</h4>
+    <h1>
+      Expert Advice
+    </h1>
+    <h4>
+      Get answers to difficult questions
+    </h4>
   </header>
 
   <div class="question-page__questions--controls">
@@ -10,21 +14,23 @@
         data-test-search-input
         @placeholder="Search"
         @class="form-control"
+        @value={{this.searchText}}
+        onkeyup={{fn this.searchQuestions}}
       />
     </div>
-    <button
-      type="button"
-      class="btn btn-primary"
-      {{on "click" this.askQuestion}}
-    >
+    <button type="button" class="btn btn-primary" {{on "click" this.askQuestion}}>
       ASK A QUESTION
     </button>
   </div>
 
   <table>
     <tr>
-      <th>Views</th>
-      <th>Questions</th>
+      <th>
+        Views
+      </th>
+      <th>
+        Questions
+      </th>
     </tr>
     {{#each this.questions as |question|}}
       <tr>
@@ -39,32 +45,30 @@
           {{question.title}}
           <ul>
             {{#each question.tags as |tag|}}
-              <li>{{tag}}</li>
+              <li>
+                {{tag}}
+              </li>
             {{/each}}
           </ul>
         </td>
 
         {{#if (eq this.session.user.email question.user.email)}}
           <td class="buttons">
-            <button
-              type="button"
-              class="btn btn-warning"
-              {{on "click" (fn this.updateQuestion question)}}
-            >
+            <button type="button" class="btn btn-warning" {{on "click" (fn this.updateQuestion question)}}>
               EDIT
             </button>
           </td>
           <td class="buttons">
-            <button
-              type="button"
-              class="btn btn-danger"
-              {{on "click" (fn this.removeQuestion question)}}
-            >
+            <button type="button" class="btn btn-danger" {{on "click" (fn this.removeQuestion question)}}>
               DELETE
             </button>
           </td>
         {{/if}}
       </tr>
+    {{else}}
+      <h1>
+        No question
+      </h1>
     {{/each}}
   </table>
 
@@ -73,11 +77,7 @@
       {{#if (eq name "...")}}
         {{name}}
       {{else}}
-        <LinkTo
-          @route={{"index"}}
-          @query={{hash page=index}}
-          class="pagination__link"
-        >
+        <LinkTo @route={{"index"}} @query={{hash page=index}} class="pagination__link">
           {{#if (eq name "Previous")}}
             <span class="pagination__item item--prev"></span>
           {{else if (eq name "Next")}}

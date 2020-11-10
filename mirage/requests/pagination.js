@@ -10,7 +10,15 @@ export default function (schema, request, context, resource) {
 
   let resources = [];
   if (resource === "question") {
-    resources = schema.questions.all();
+    if (request.queryParams["filter[keywords]"] != null) {
+      resources = schema.questions.where(
+        question =>
+          question.title.toLowerCase().indexOf(request.queryParams["filter[keywords]"]) > -1 ||
+          question.tags.join().toLowerCase().indexOf(request.queryParams["filter[keywords]"]) > -1
+      );
+    } else {
+      resources = schema.questions.all();
+    }
   }
   let slice = resources.slice((page - 1) * size, (page - 1) * size + size);
 

@@ -10,6 +10,9 @@ export default class IndexRoute extends Route {
     },
     size: {
       refreshModel: true
+    },
+    keyword: {
+      refreshModel: true
     }
   };
 
@@ -20,6 +23,9 @@ export default class IndexRoute extends Route {
   async model(params) {
     return this.store
       .query("question", {
+        filter: {
+          keywords: params.keyword
+        },
         include: "user",
         page: {
           number: params.page,
@@ -43,6 +49,7 @@ export default class IndexRoute extends Route {
     if (isExiting) {
       set(controller, "page", 1);
       set(controller, "size", 7);
+      set(controller, "keyword", undefined);
     }
   }
 }
